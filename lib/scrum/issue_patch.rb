@@ -6,7 +6,7 @@ module Scrum
       base.class_eval do
 
         belongs_to :sprint
-        has_many :pending_efforts, :order => "date ASC"
+        has_many :pending_efforts, -> { order("date ASC") }
 
         acts_as_list :scope => :sprint
 
